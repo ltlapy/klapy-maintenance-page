@@ -19,6 +19,10 @@ function getMaintenanceInfo() {
 
         if (reason === "") {
             console.log("Show default message because reason is empty");
+        } else if (reason === "functional") {
+            document.getElementById('default').hidden = true;
+            reasonDom.textContent = "현재 서비스가 작동 중입니다.";
+            reasonDom.innerHTML += '<br><a href="https://k.lapy.link">되돌아가기</a>'
         } else if (reason === "update") {
             const version = res['version'];
             
